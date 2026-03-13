@@ -1,4 +1,4 @@
-import { User } from '@/types/User.types';
+import { User } from "@/types/User.types";
 
 interface LoginResponse {
   user: User;
@@ -6,12 +6,12 @@ interface LoginResponse {
 }
 
 class AuthService {
-  private readonly baseUrl = '/api/auth';
+  private readonly baseUrl = "/api/auth";
 
   async login(email: string, password: string): Promise<User> {
     const response = await fetch(`${this.baseUrl}/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
 
@@ -20,16 +20,16 @@ class AuthService {
     }
 
     const data: LoginResponse = await response.json();
-    localStorage.setItem('token', data.token);
+    localStorage.setItem("token", data.token);
     return data.user;
   }
 
   logout(): void {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    return localStorage.getItem("token");
   }
 }
 
