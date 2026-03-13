@@ -1,20 +1,18 @@
-import React from 'react';
-
 interface ButtonProps {
   label: string;
   onClick: () => void;
-  variant?: 'primary' | 'secondary' | 'danger';
+  variant?: "primary" | "secondary" | "danger";
   disabled?: boolean;
   isLoading?: boolean;
 }
 
-export default function Button({
+export const Button = ({
   label,
   onClick,
-  variant = 'primary',
+  variant = "primary",
   disabled = false,
   isLoading = false,
-}: ButtonProps): React.ReactElement {
+}: ButtonProps) => {
   const handleClick = (): void => {
     if (!disabled && !isLoading) {
       onClick();
@@ -27,7 +25,7 @@ export default function Button({
       disabled={disabled || isLoading}
       className={`btn btn-${variant}`}
     >
-      {isLoading ? 'Carregando...' : label}
+      {isLoading ? "Carregando..." : label}
     </button>
   );
-}
+};

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import { useState, ChangeEvent } from "react";
 
-import Button from '@/components/shared/Button';
-import { useAuth } from '@/hooks/useAuth';
+import { Button } from "@/components/shared/button";
 
-export default function LoginForm(): React.ReactElement {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+import { useAuth } from "@/hooks/use-auth";
+
+export const LoginForm = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const { login, isLoading } = useAuth();
 
@@ -15,15 +16,15 @@ export default function LoginForm(): React.ReactElement {
     try {
       await login(email, password);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Erro ao fazer login');
+      setError(err instanceof Error ? err.message : "Erro ao fazer login");
     }
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
   };
 
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setPassword(e.target.value);
   };
 
@@ -47,11 +48,7 @@ export default function LoginForm(): React.ReactElement {
         placeholder="Senha"
       />
 
-      <Button
-        label="Entrar"
-        onClick={handleSubmit}
-        isLoading={isLoading}
-      />
+      <Button label="Entrar" onClick={handleSubmit} isLoading={isLoading} />
     </div>
   );
-}
+};

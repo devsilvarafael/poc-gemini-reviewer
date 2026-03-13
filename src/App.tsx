@@ -1,11 +1,9 @@
-import React from "react";
+import { LoginPage } from "@/pages/login-page";
 
-import LoginPage from "@/pages/LoginPage";
-
-export default function App(): React.ReactElement {
+export const App = () => {
   return (
     <div className="app">
       <LoginPage />
     </div>
   );
-}
+};
