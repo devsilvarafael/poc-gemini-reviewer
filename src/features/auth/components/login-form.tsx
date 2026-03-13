@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from "react";
 
-import { Button } from "@/components/shared/button";
+import { Button } from "@/components/shared/Button";
 
 import { useAuth } from "@/hooks/use-auth";
 
