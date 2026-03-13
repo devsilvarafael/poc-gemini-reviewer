@@ -3,9 +3,10 @@
 ## 1. Nomenclatura de Componentes
 
 ### Regras obrigatórias:
-- **Componentes React** devem usar **PascalCase** no nome do arquivo e no export.
-  - ✅ `UserProfile.tsx` → `export default function UserProfile()`
-  - ❌ `userProfile.tsx`, `user-profile.tsx`, `user_profile.tsx`
+
+- **Componentes React** devem usar **export const**, **nome-componente.tsx** no nome do arquivo e **PascalCase** no nome do componente.
+  - ✅ `UserProfile.tsx` → `export const UserProfile = () => {}`
+  - ✅ `user-profile.tsx`
 - **O nome do arquivo DEVE ser idêntico ao nome do componente exportado.**
   - ❌ Arquivo `card.tsx` exportando `ProductCard` — o arquivo deveria se chamar `ProductCard.tsx`
 - **Componentes de página** devem ter sufixo `Page`:
@@ -22,6 +23,7 @@
 ## 2. Estrutura de Pastas
 
 ### Regras obrigatórias:
+
 - Componentes compartilhados ficam em `src/components/shared/`.
 - Componentes específicos de feature ficam em `src/features/{feature}/components/`.
 - **NÃO** colocar componentes de feature dentro de `src/components/shared/`.
@@ -34,6 +36,7 @@
 ## 3. TypeScript Estrito
 
 ### Regras obrigatórias:
+
 - **PROIBIDO usar `any`**. Sempre tipar explicitamente.
   - ❌ `const data: any = await fetch(...)`
   - ✅ `const data: UserResponse = await fetch(...)`
@@ -46,6 +49,7 @@
 ## 4. Padrões de Código React
 
 ### Regras obrigatórias:
+
 - **Componentes devem ser funcionais** — proibido usar class components.
 - **Proibido lógica de negócios dentro de componentes.**
   - Lógica de fetch de dados → extrair para hooks ou services.
@@ -61,6 +65,7 @@
 ## 5. Imports
 
 ### Regras obrigatórias:
+
 - Usar **imports absolutos** com alias `@/`:
   - ✅ `import { Button } from '@/components/shared/Button'`
   - ❌ `import { Button } from '../../../components/shared/Button'`
@@ -75,6 +80,7 @@
 ## 6. Segurança e Boas Práticas
 
 ### Regras obrigatórias:
+
 - **NUNCA commitar** arquivos `.env`, chaves de API ou secrets.
 - **Sempre sanitizar** inputs do usuário.
 - **Usar `key` única** em listas renderizadas — nunca usar index como key.

@@ -15,7 +15,7 @@ pull_request_opened:
 
 # Nível mínimo de severidade para comentários
 # Opções: critical, high, medium, low
-comment_severity_threshold: low
+comment_severity_threshold: high
 
 # Arquivos que o Gemini deve ignorar na review
 ignored_paths:
