@@ -75,7 +75,7 @@
   3. Hooks, services, utils (`@/hooks/...`, `@/services/...`)
   4. Types (`@/types/...`)
   5. Styles e assets
-- **Proibido import { React } from 'react'**
+- **Proibido import React from 'react'**
 - **Proibido imports cíclicos.**
 
 ## 6. Segurança e Boas Práticas
