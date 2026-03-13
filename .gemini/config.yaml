@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://developers.google.com/gemini-code-assist/docs/config-schema
+#
+# Configuração do Gemini Code Assist para este repositório.
+# Documentação: https://developers.google.com/gemini-code-assist/docs/customize-gemini-behavior-github
+
+pull_request_opened:
+  # Posta mensagem de ajuda no PR
+  help: true
+  # Gera resumo automático do PR
+  summary: true
+  # Faz code review automático
+  code_review: true
+  # Inclui PRs em draft
+  include_drafts: true
+
+# Nível mínimo de severidade para comentários
+# Opções: critical, high, medium, low
+comment_severity_threshold: low
+
+# Arquivos que o Gemini deve ignorar na review
+ignored_paths:
+  - "node_modules/**"
+  - "dist/**"
+  - "build/**"
+  - "coverage/**"
+  - "*.config.js"
+  - "*.config.ts"
+  - "vite.config.ts"
+  - "tailwind.config.ts"
+  - "tsconfig.json"
+  - "package.json"
+  - "package-lock.json"
+  - "*.md"
+  - ".github/**"
+  - "public/**"
